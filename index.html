@@ -21,31 +21,32 @@
       .card-label{font-size:14px;color:#666;margin-bottom:12px;font-weight:500}
       .card-value{font-size:32px;font-weight:700;color:#1a1a1a;margin-bottom:6px;line-height:1.2}
       .card-unit{font-size:12px;color:#999}
-      .category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
+      .category-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:40px}
       .category-card{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:24px;transition:box-shadow .2s ease}
       .category-card:hover{box-shadow:0 2px 16px rgba(0,0,0,.06)}
       .category-title-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
       .category-icon{width:28px;height:28px;flex-shrink:0;color:#555}
       .category-name{font-size:16px;font-weight:600;color:#1a1a1a}
       .category-divider{height:1px;background-color:#eee;margin-bottom:16px}
-      .category-details{list-style:none}
-      .category-details li{display:flex;align-items:center;gap:8px;font-size:14px;color:#444;padding:6px 0}
-      .detail-bullet{width:6px;height:6px;border-radius:50%;background-color:#333;flex-shrink:0}
-      .detail-label{color:#555}
-      .detail-value{color:#333;font-weight:500}
+      .category-details{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 20px}
+      .category-details li{display:flex;align-items:baseline;gap:6px;font-size:13px;color:#444;padding:5px 0}
+      .detail-bullet{width:5px;height:5px;border-radius:50%;background-color:#333;flex-shrink:0;margin-top:2px}
+      .detail-label{color:#888;white-space:nowrap;font-size:13px}
+      .detail-value{color:#333;font-weight:500;font-size:13px}
       .decor-icons{position:fixed;bottom:40px;right:40px;display:flex;flex-direction:column;gap:16px;opacity:.35;pointer-events:none}
       .decor-icon{width:48px;height:48px;color:#888}
       .decor-icon .cross-red{color:#8b1a1a}
       @media(max-width:768px){
         .page-wrapper{padding:24px 16px 40px}
         .summary-cards{grid-template-columns:repeat(2,1fr);gap:12px}
-        .category-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+        .category-grid{grid-template-columns:1fr;gap:16px}
+        .category-details{grid-template-columns:1fr 1fr}
         .title-text{font-size:18px}
         .card-value{font-size:26px}
         .decor-icons{display:none}
       }
       @media(max-width:480px){
-        .category-grid{grid-template-columns:1fr}
+        .category-details{grid-template-columns:1fr}
       }
       @media(max-width:480px){
         .summary-cards{grid-template-columns:1fr 1fr;gap:10px}
@@ -107,15 +108,22 @@
           <div class="category-card">
             <div class="category-title-row">
               <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v12M8 10h8M8 14h8"/>
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v12M8 10h8M8 14h8"/>
               </svg>
               <span class="category-name">年金险</span>
             </div>
             <div class="category-divider"></div>
             <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值:</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额:</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保险个数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">生存收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">代缴期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
             </ul>
           </div>
 
@@ -123,16 +131,22 @@
           <div class="category-card">
             <div class="category-title-row">
               <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
               </svg>
               <span class="category-name">万能险</span>
             </div>
             <div class="category-divider"></div>
             <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值:</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额:</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保险个数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">生存收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">代缴期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
             </ul>
           </div>
 
@@ -146,8 +160,16 @@
             </div>
             <div class="category-divider"></div>
             <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值:</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额:</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保险个数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">生存收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">代缴期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
             </ul>
           </div>
 
@@ -155,15 +177,22 @@
           <div class="category-card">
             <div class="category-title-row">
               <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <polyline points="9 12 11 14 15 10"/>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
               </svg>
               <span class="category-name">终身寿险</span>
             </div>
             <div class="category-divider"></div>
             <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值:</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额:</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保险个数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">生存收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">代缴期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
             </ul>
           </div>
 
@@ -171,16 +200,22 @@
           <div class="category-card">
             <div class="category-title-row">
               <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                <line x1="12" y1="8" x2="12" y2="16"/>
-                <line x1="8" y1="12" x2="16" y2="12"/>
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
               </svg>
               <span class="category-name">重疾险</span>
             </div>
             <div class="category-divider"></div>
             <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值:</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额:</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保险个数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">生存收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">代缴期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
             </ul>
           </div>
 
@@ -188,15 +223,22 @@
           <div class="category-card">
             <div class="category-title-row">
               <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <text x="8.5" y="16" font-size="8" fill="currentColor" stroke="none" font-weight="600">¥</text>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><text x="8.5" y="16" font-size="8" fill="currentColor" stroke="none" font-weight="600">¥</text>
               </svg>
               <span class="category-name">健康险</span>
             </div>
             <div class="category-divider"></div>
             <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值:</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额:</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保险个数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">生存收益人</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">代缴期数</span><span class="detail-value">--</span></li>
+              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
             </ul>
           </div>
         </div>
