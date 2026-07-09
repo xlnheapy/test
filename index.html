@@ -28,8 +28,9 @@
       .category-icon{width:28px;height:28px;flex-shrink:0;color:#555}
       .category-name{font-size:16px;font-weight:600;color:#1a1a1a}
       .category-divider{height:1px;background-color:#eee;margin-bottom:16px}
-      .category-details{list-style:none;display:grid;grid-template-columns:1fr;gap:2px 0}
-      .category-details li{display:flex;align-items:baseline;gap:6px;font-size:13px;color:#444;padding:5px 0}
+      .category-details{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+      .category-details-compact{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 16px}
+      .category-details li,.category-details-compact li{display:flex;align-items:baseline;gap:6px;font-size:13px;color:#444;padding:5px 0}
       .detail-bullet{width:5px;height:5px;border-radius:50%;background-color:#333;flex-shrink:0;margin-top:2px}
       .detail-label{color:#888;white-space:nowrap;font-size:13px}
       .detail-value{color:#333;font-weight:500;font-size:13px}
@@ -179,7 +180,7 @@
               <span class="category-name">投连险</span>
             </div>
             <div class="category-divider"></div>
-            <ul class="category-details">
+            <ul class="category-details-compact">
               <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">--</span></li>
               <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
               <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
@@ -202,7 +203,7 @@
               <span class="category-name">终身寿险</span>
             </div>
             <div class="category-divider"></div>
-            <ul class="category-details">
+            <ul class="category-details-compact">
               <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">--</span></li>
               <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
               <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
@@ -225,7 +226,7 @@
               <span class="category-name">重疾险</span>
             </div>
             <div class="category-divider"></div>
-            <ul class="category-details">
+            <ul class="category-details-compact">
               <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">--</span></li>
               <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
               <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
@@ -248,7 +249,7 @@
               <span class="category-name">健康险</span>
             </div>
             <div class="category-divider"></div>
-            <ul class="category-details">
+            <ul class="category-details-compact">
               <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">--</span></li>
               <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
               <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
