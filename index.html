@@ -46,6 +46,10 @@
       .vas-table tbody td:last-child{border-right:none}
       .vas-table tbody tr:hover{background-color:#fafafa}
       .vas-item{display:block;padding:2px 0;color:#555;font-size:13px}
+      .vas-check{color:#333;font-weight:600;font-size:15px}
+      .vas-dash{color:#bbb}
+      .vas-sub-title{font-size:14px;font-weight:600;color:#333;margin:32px 0 12px;padding-left:2px}
+      .vas-sub-title:first-of-type{margin-top:0}
       .decor-icons{position:fixed;bottom:40px;right:40px;display:flex;flex-direction:column;gap:16px;opacity:.35;pointer-events:none}
       .decor-icon{width:48px;height:48px;color:#888}
       .decor-icon .cross-red{color:#8b1a1a}
@@ -273,8 +277,8 @@
 
         <div class="member-level">当前大会员等级：<span>L2</span></div>
 
-        <div class="sub-section-title">预防体检与乐活人生</div>
-
+        <!-- 预防体检与乐活人生 -->
+        <div class="vas-sub-title">预防体检与乐活人生</div>
         <table class="vas-table">
           <thead>
             <tr>
@@ -288,30 +292,191 @@
           </thead>
           <tbody>
             <tr>
-              <td>
-                日常健康关爱（2选1）<br/>——1次/年
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>日常健康关爱（2选1）——1次/年<br/><span class="vas-item">① 成人洁牙护齿套餐（1份）</span><span class="vas-item">② 运动健身礼遇（2份）</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
             </tr>
             <tr>
-              <td>① 成人洁牙护齿套餐（1份）</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>疾病早筛与健身（3选1）——1次/年<br/><span class="vas-item">① 大肠癌早筛检测（1份）</span><span class="vas-item">② 宫颈癌HPV早筛检测（1份）</span><span class="vas-item">③ 运动健身礼遇（3份）</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
             </tr>
             <tr>
-              <td>② 运动健身礼遇（2份）</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>优选体检套餐与乐活人生（7选1）——1次/年<br/><span class="vas-item">① 心脑血管专项体检套餐</span><span class="vas-item">② 肿瘤早期筛查体检套餐</span><span class="vas-item">③ 白金关爱体检套餐</span><span class="vas-item">④ 亚健康体检套餐</span><span class="vas-item">⑤ 俪人关爱体检套餐（女性）</span><span class="vas-item">⑥ 乐居颐养</span><span class="vas-item">⑦ 心理咨询</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>高端体检与乐活人生（6选1）——1次/年<br/><span class="vas-item">① 至尊关爱体检套餐</span><span class="vas-item">② 高端核磁体检套餐</span><span class="vas-item">③ 女性深度健康检查套餐</span><span class="vas-item">④ 高端甄选定制体检套餐</span><span class="vas-item">⑤ 焕能健康关爱包（3份）</span><span class="vas-item">⑥ 乐健智护</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+            </tr>
+            <tr>
+              <td>关爱服务（2选1）——1次/年<br/><span class="vas-item">① 儿童体检套餐（0-18岁）</span><span class="vas-item">② 基因检测套餐</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 健康生活与乐活人生 -->
+        <div class="vas-sub-title">健康生活与乐活人生</div>
+        <table class="vas-table">
+          <thead>
+            <tr>
+              <th>权益大类及名称</th>
+              <th>保险成就<span class="level-label">Lv1</span></th>
+              <th>保险成就<span class="level-label">Lv2</span></th>
+              <th>保险成就<span class="level-label">Lv3</span></th>
+              <th>保险成就<span class="level-label">Lv4</span></th>
+              <th>保险成就<span class="level-label">Lv5</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>运动健身礼遇（1份）——1次/年</td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>运动健身礼遇（2份）——1次/年</td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>活力健身与乐活人生（4选1）——1次/年<br/><span class="vas-item">① 运动健身礼遇（8份）</span><span class="vas-item">② 焕能健康关爱包（1份）</span><span class="vas-item">③ 乐居颐养</span><span class="vas-item">④ 心理咨询</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+            </tr>
+            <tr>
+              <td>健康养身（2选1）——1次/年<br/><span class="vas-item">① 健康中医大礼包</span><span class="vas-item">② 高端私立机构理疗预约服务</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 医疗帮助 -->
+        <div class="vas-sub-title">医疗帮助</div>
+        <table class="vas-table">
+          <thead>
+            <tr>
+              <th>权益大类及名称</th>
+              <th>保险成就<span class="level-label">Lv1</span></th>
+              <th>保险成就<span class="level-label">Lv2</span></th>
+              <th>保险成就<span class="level-label">Lv3</span></th>
+              <th>保险成就<span class="level-label">Lv4</span></th>
+              <th>保险成就<span class="level-label">Lv5</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>汇康版家庭医生服务——1次/年</td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>就诊绿通与焕能健康关爱（2选1）——1次/年<br/><span class="vas-item">① 三甲医院就医绿通</span><span class="vas-item">② 焕能健康关爱包（2份）</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>汇享版家庭医生服务与焕能健康关爱（2选1）——1次/年<br/><span class="vas-item">① 汇享版家庭医生服务</span><span class="vas-item">② 焕能健康关爱包（3份）</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>汇御版服务与焕能健康关爱（2选1）——1次/10年<br/><span class="vas-item">① 汇御版私人家庭医生（个人版）</span><span class="vas-item">② 焕能健康关爱包（至尊版）</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-dash">—</span></td>
+            </tr>
+            <tr>
+              <td>汇御版服务与焕能健康关爱（2选2）——1次/10年<br/><span class="vas-item">① 汇御版私人家庭医生（个人版）</span><span class="vas-item">② 焕能健康关爱包（至尊版）</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 全球网络 -->
+        <div class="vas-sub-title">全球网络</div>
+        <table class="vas-table">
+          <thead>
+            <tr>
+              <th>权益大类及名称</th>
+              <th>保险成就<span class="level-label">Lv1</span></th>
+              <th>保险成就<span class="level-label">Lv2</span></th>
+              <th>保险成就<span class="level-label">Lv3</span></th>
+              <th>保险成就<span class="level-label">Lv4</span></th>
+              <th>保险成就<span class="level-label">Lv5</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>国外二次诊疗优惠——无限次<br/><span class="vas-item">① 国外专家视频咨询专属9.5折优惠</span><span class="vas-item">② 日本/美国 书面/视频会诊服务专属5折优惠</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+            </tr>
+            <tr>
+              <td>境外就医（赴美/日/英国）优惠专属9.5折——无限次</td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+              <td><span class="vas-check">√</span></td>
+            </tr>
+            <tr>
+              <td>高端全球医疗与焕能健康关爱（6选1）——1次/10年<br/><span class="vas-item">① 境外就医汇丰专属服务套餐</span><span class="vas-item">② 境外健康体检-日本癌研有明医院-1日体检套餐（女性/男性）</span><span class="vas-item">③ 境外健康体检-日本癌研有明医院-平日住院2日体检套餐（女性/男性）</span><span class="vas-item">④ 境外体检套餐-日本湘南镰仓综合医院尊享体检套餐</span><span class="vas-item">⑤ 香港健康体检-香港高端私立医院体检套餐</span><span class="vas-item">⑥ 焕能健康关爱包（至尊版）</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-dash">—</span></td>
+              <td><span class="vas-check">√</span></td>
             </tr>
           </tbody>
         </table>
