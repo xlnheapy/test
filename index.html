@@ -94,6 +94,20 @@
         .card-value{font-size:22px}
         .page-title{margin-bottom:28px}
       }
+      
+      /* 安联人寿会员权益表格 */
+      .allianz-table-wrapper{margin-top:16px;overflow-x:auto}
+      .allianz-table{width:100%;border-collapse:collapse;font-size:13px}
+      .allianz-table thead th{background:linear-gradient(135deg,#d4af37,#c9a227);color:#fff;padding:12px 8px;font-weight:600;text-align:center;vertical-align:middle}
+      .allianz-table thead .th-sub{font-size:11px;color:#f0e6d2;font-weight:400}
+      .allianz-table tbody td{background:#1a3a5c;color:#fff;padding:10px 8px;text-align:center;border-bottom:1px solid #2a4a6c}
+      .allianz-table tbody td:first-child,.allianz-table tbody td:nth-child(2){text-align:left}
+      .allianz-table .category-cell{background:#0d2840;font-weight:600;vertical-align:middle}
+      .allianz-table .check-mark{color:#4ade80}
+      .allianz-table .no-mark{color:#6b7280}
+      .allianz-table .note-text{font-size:11px;color:#93c5fd}
+      .allianz-notes{margin-top:16px;padding:16px;background:#f8fafc;border-radius:8px;font-size:12px;color:#475569;line-height:1.8}
+      .allianz-notes p{margin:4px 0}
     </style>
   </head>
   <body>
@@ -757,6 +771,346 @@
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <!-- 安联人寿会员权益一览表 -->
+      <section class="vas-subsection">
+        <h4 class="vas-subsection-title">安联人寿会员权益一览表</h4>
+        
+        <!-- 表格1：少儿、青年、贵宾俱乐部 -->
+        <div class="allianz-table-wrapper">
+          <table class="allianz-table">
+            <thead>
+              <tr>
+                <th>服务类别</th>
+                <th>服务项目</th>
+                <th>臻玉客户<br><span class="th-sub">投保人保单累计资产≥5万</span></th>
+                <th>铂金客户<br><span class="th-sub">投保人保单累计资产≥100万</span></th>
+                <th>黄钻客户<br><span class="th-sub">投保人保单累计资产≥500万</span></th>
+                <th>黑钻客户<br><span class="th-sub">(含享老俱乐部至臻客户)<br>投保人保单累计资产≥1000万</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- "未来星"少儿俱乐部 -->
+              <tr>
+                <td rowspan="4" class="category-cell">"未来星"少儿俱乐部</td>
+                <td>儿童生长发育测评</td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>权威儿科专家电话咨询</td>
+                <td><span class="no-mark">—</span></td>
+                <td>6次/年</td>
+                <td>6次/年</td>
+                <td>6次/年</td>
+              </tr>
+              <tr>
+                <td>和睦家少儿疫苗</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span><br><span class="note-text">(与和睦家疫苗服务共享额度)</span></td>
+              </tr>
+              <tr>
+                <td>留学医疗救援</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <!-- "追光者"青年俱乐部 -->
+              <tr>
+                <td rowspan="5" class="category-cell">"追光者"青年俱乐部</td>
+                <td>乐享运动权益</td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>欧洲转诊通道</td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>电影观摩权益</td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>咖啡快餐点餐权益</td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>爱车服务</td>
+                <td>优惠专享</td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <!-- "私享家"贵宾俱乐部 -->
+              <tr>
+                <td rowspan="15" class="category-cell">"私享家"贵宾俱乐部</td>
+                <td>法律咨询电话版</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>一对一财税规划</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>2次/年</td>
+              </tr>
+              <tr>
+                <td>一对一金牌律师</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>2次/年</td>
+              </tr>
+              <tr>
+                <td>全球紧急医疗救援</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>欧洲转诊协助</td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+              </tr>
+              <tr>
+                <td>三甲医生极速问诊</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>重疾门诊、住院绿通</td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+              </tr>
+              <tr>
+                <td>尊享体检套餐</td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+              </tr>
+              <tr>
+                <td>私立医院体检</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+              </tr>
+              <tr>
+                <td>和睦家疫苗服务</td>
+                <td><span class="no-mark">—</span></td>
+                <td>优惠专享</td>
+                <td>优惠专享</td>
+                <td>1次/年</td>
+              </tr>
+              <tr>
+                <td>免疫细胞存储服务</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>优惠专享</td>
+                <td>存储20年</td>
+              </tr>
+              <tr>
+                <td>安联全球活动优先受邀</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>厨房深层清洁服务</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>2次/年</td>
+              </tr>
+              <tr>
+                <td>家庭时光影像</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 表格2："颐康汇"享老俱乐部 -->
+        <div class="allianz-table-wrapper">
+          <table class="allianz-table">
+            <thead>
+              <tr>
+                <th>服务类别</th>
+                <th>服务项目</th>
+                <th>铂金客户<br><span class="th-sub">投保人保单累计资产≥100万</span></th>
+                <th>黄钻客户<br><span class="th-sub">投保人保单累计资产≥500万</span></th>
+                <th>黑钻客户<br><span class="th-sub">投保人保单累计资产≥1000万</span></th>
+                <th>至臻客户</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- "颐康汇"享老俱乐部 -->
+              <tr>
+                <td rowspan="17" class="category-cell">"颐康汇"享老俱乐部</td>
+                <td>长者健康及生活管家</td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>长者心理关怀</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>长者私人医生</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>专家门诊安排-中医</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>专家门诊安排-心脑血管疾病</td>
+                <td>1次/年(三选一)</td>
+                <td>2次/年(三选一)</td>
+                <td>3次/年(三选一)</td>
+                <td>4次/年(三选一)</td>
+              </tr>
+              <tr>
+                <td>专家门诊安排-康复科</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>欧洲转诊协助</td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+              </tr>
+              <tr>
+                <td>就医陪诊</td>
+                <td>1次/年</td>
+                <td>2次/年</td>
+                <td>3次/年</td>
+                <td>4次/年</td>
+              </tr>
+              <tr>
+                <td>重疾门诊、住院绿通</td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次</td>
+                <td>1次</td>
+                <td>2次</td>
+              </tr>
+              <tr>
+                <td>专家到府</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>4次/年</td>
+              </tr>
+              <tr>
+                <td>病后营养及康复指导</td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+                <td><span class="check-mark">✅</span></td>
+              </tr>
+              <tr>
+                <td>出院陪护</td>
+                <td>1次/年</td>
+                <td>2次/年</td>
+                <td>3次/年</td>
+                <td>4次/年</td>
+              </tr>
+              <tr>
+                <td>护工到家</td>
+                <td>1天/年</td>
+                <td>2天/年</td>
+                <td>3天/年</td>
+                <td>4天/年</td>
+              </tr>
+              <tr>
+                <td>护士到家</td>
+                <td>1次/年</td>
+                <td>2次/年</td>
+                <td>3次/年</td>
+                <td>4次/年</td>
+              </tr>
+              <tr>
+                <td>意大利圣·菲利斯酒庄-安联专属折扣</td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+              </tr>
+              <tr>
+                <td>家庭时光影像</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+              </tr>
+              <tr>
+                <td>高尔夫发源地圣·安德鲁斯老球场安联专属优先受邀</td>
+                <td><span class="no-mark">—</span></td>
+                <td><span class="no-mark">—</span></td>
+                <td>1次/年</td>
+                <td>1次/年</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 服务说明 -->
+        <div class="allianz-notes">
+          <p>1. 少儿/青年/贵宾俱乐部服务项目中，除各类体检、疫苗接种的服务对象为投保人或被保险人以及有特别约定的服务项目之外，其余项目服务对象均为投保人本人</p>
+          <p>2. "未来星"少儿俱乐部的和睦家少儿疫苗接种服务与"私享家"贵宾俱乐部的和睦家疫苗服务在同一资格年度内共享一次额度</p>
+          <p>3. 优惠专享类服务需自费享受安联专属服务折扣价格</p>
+          <p>4. 家庭时光影像服务在"私享家"贵宾俱乐部与"颐康汇"享老俱乐部同一资格年度内共享一次额度</p>
+          <p>5. 黑钻客户层级中包含"颐康汇"享老俱乐部的至臻客户层级</p>
+          <p>6. 我司会持续对服务规则与项目进行调整和优化并同时更新服务手册，如有调整以安联人寿官网公布的最新《会员权益俱乐部权益导览》为准</p>
+          <p>7. 若有任何问题请垂询保单服务人员或拨打安联热线95342，或查询"安联在线"微信服务号</p>
+        </div>
       </section>
 
       <!-- ===== Module 3: 每月观点概要 ===== -->
