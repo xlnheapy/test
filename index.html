@@ -95,6 +95,22 @@
         .page-title{margin-bottom:28px}
       }
       
+      /* 保险产品明细表 */
+      .insurance-table-wrapper{overflow-x:auto;margin-bottom:40px}
+      .insurance-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:auto}
+      .insurance-table thead th{background-color:#e0e0e0;color:#333;font-weight:600;padding:12px 10px;text-align:center;border-right:1px solid #fff;white-space:nowrap}
+      .insurance-table thead th:first-child{text-align:center}
+      .insurance-table thead th:last-child{border-right:none}
+      .insurance-table tbody td{padding:12px 10px;border-top:1px solid #eee;background-color:#fff;vertical-align:top;text-align:center}
+      .insurance-table tbody td:first-child{text-align:left}
+      .insurance-table tbody tr:hover td{background-color:#f5f5f5}
+      .insurance-table tbody tr.insurance-group td{border-top:1px solid #ddd}
+      .insurance-table .insurance-type{font-weight:600;color:#1a1a1a;background-color:#fafafa;text-align:center;vertical-align:middle}
+      @media(max-width:768px){
+        .insurance-table{font-size:12px}
+        .insurance-table thead th,.insurance-table tbody td{padding:8px 6px}
+      }
+      
       /* 安联人寿会员权益表格 */
       .allianz-table-wrapper{margin-top:16px;overflow-x:auto}
       .allianz-table{width:100%;border-collapse:collapse;font-size:13px}
@@ -154,221 +170,165 @@
         </div>
       </section>
 
-      <!-- ===== 保险分类详情 ===== -->
+      <!-- ===== 保险产品明细表 ===== -->
       <section class="section">
-        <div class="category-grid">
-          <!-- 重疾险 -->
-          <div class="category-card">
-            <div class="category-title-row">
-              <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
-              </svg>
-              <span class="category-name">重疾险</span>
-            </div>
-            <div class="category-divider"></div>
-            <!-- 产品1 -->
-            <div class="product-label">产品1</div>
-            <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">康健人生重大疾病保险</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">涵盖120种重大疾病,轻症中症多次赔付,保费豁免。</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">45,200.00</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">300,000</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">30</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">22</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">终身</span></li>
-            </ul>
-            <div class="product-separator"></div>
-            <!-- 产品2 -->
-            <div class="product-label">产品2</div>
-            <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">守卫者重疾险</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">重疾分组多次赔付,癌症二次赔付可选,保障全面。</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">28,600.00</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">200,000</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">20</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">15</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">终身</span></li>
-            </ul>
-            <div class="product-separator"></div>
-            <!-- 产品3 -->
-            <div class="product-label">产品3</div>
-            <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">健康无忧重大疾病保险</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">保障范围广,涵盖轻症重疾,保费适中。</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">18,500.00</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">150,000</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">20</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">12</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">终身</span></li>
-            </ul>
-            <div class="product-separator"></div>
-            <!-- 产品4 -->
-            <div class="product-label">产品4</div>
-            <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">安心人生重疾保障计划</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">特定疾病额外赔付,保单贷款功能。</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">12,800.00</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">100,000</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">15</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">8</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">至70岁</span></li>
-            </ul>
-          </div>
-
-          <!-- 医疗险 -->
-          <div class="category-card">
-            <div class="category-title-row">
-              <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
-              <span class="category-name">医疗险</span>
-            </div>
-            <div class="category-divider"></div>
-            <div class="product-block">
-              <div class="product-label">产品1</div>
-              <ul class="category-details">
-                <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">1</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">平安e生保长期医疗</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">保证续保20年，涵盖住院医疗、特殊门诊等</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">400,000</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">默认</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">默认</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">1</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">0</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">1年</span></li>
-              </ul>
-              <div class="category-divider"></div>
-              <div class="product-label">产品2</div>
-              <ul class="category-details">
-                <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">1</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">众安尊享e生百万医疗</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">最高600万保额，含质子重离子治疗</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">600,000</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">默认</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">默认</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">1</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">0</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">1年</span></li>
-              </ul>
-              <div class="category-divider"></div>
-              <div class="product-label">产品3</div>
-              <ul class="category-details">
-                <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">1</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">太平洋蓝医保长期医疗</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">保证续保20年，含重疾绿通服务</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">400,000</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">默认</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">默认</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">1</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">0</span></li>
-                <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">1年</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- 终身寿险 -->
-          <div class="category-card">
-            <div class="category-title-row">
-              <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2C6.5 2 2 6.5 2 12h10v8c0 1.1.9 2 2 2s2-.9 2-2v-8h10c0-5.5-4.5-10-10-10z"/>
-              </svg>
-              <span class="category-name">终身寿险</span>
-            </div>
-            <div class="category-divider"></div>
-            <ul class="category-details">
-              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">传世金生终身寿险</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">终身保障,保额递增,兼具保障与传承功能。</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">328,500.00</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">100,000</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">默认</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">20</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">12</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">终身</span></li>
-            </ul>
-          </div>
-
-          <!-- 年金险 -->
-          <div class="category-card">
-            <div class="category-title-row">
-              <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
-              </svg>
-              <span class="category-name">年金险</span>
-            </div>
-            <div class="category-divider"></div>
-            <ul class="category-details-compact">
-              <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
-            </ul>
-          </div>
-
-          <!-- 投连险 -->
-          <div class="category-card">
-            <div class="category-title-row">
-              <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <text x="12" y="14" font-size="8" fill="currentColor" text-anchor="middle" font-weight="bold">¥</text>
-              </svg>
-              <span class="category-name">投连险</span>
-            </div>
-            <div class="category-divider"></div>
-            <ul class="category-details-compact">
-              <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
-            </ul>
-          </div>
-
-          <!-- 万能险 -->
-          <div class="category-card">
-            <div class="category-title-row">
-              <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
-                <path d="M22 12A10 10 0 0 0 12 2v10z"/>
-              </svg>
-              <span class="category-name">万能险</span>
-            </div>
-            <div class="category-divider"></div>
-            <ul class="category-details-compact">
-              <li><span class="detail-bullet"></span><span class="detail-label">保单个数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品名称</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">产品特点</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">现金价值</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保额</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">受益人</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">生存受益人</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">缴费期数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">待缴期数</span><span class="detail-value">--</span></li>
-              <li><span class="detail-bullet"></span><span class="detail-label">保障期限</span><span class="detail-value">--</span></li>
-            </ul>
-          </div>
+        <div class="insurance-table-wrapper">
+          <table class="insurance-table">
+            <thead>
+              <tr>
+                <th>险种类型</th>
+                <th>产品名称</th>
+                <th>产品特点</th>
+                <th>现金价值</th>
+                <th>保额</th>
+                <th>受益人</th>
+                <th>生存受益人</th>
+                <th>缴费期数</th>
+                <th>待缴期数</th>
+                <th>保障期限</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 重疾险 - 产品1 -->
+              <tr class="insurance-group">
+                <td class="insurance-type" rowspan="4">重疾险</td>
+                <td>康健人生重大疾病保险</td>
+                <td>涵盖120种重大疾病,轻症中症多次赔付,保费豁免。</td>
+                <td>45,200.00</td>
+                <td>300,000</td>
+                <td>默认</td>
+                <td>默认</td>
+                <td>30</td>
+                <td>22</td>
+                <td>终身</td>
+              </tr>
+              <!-- 重疾险 - 产品2 -->
+              <tr>
+                <td>守卫者重疾险</td>
+                <td>重疾分组多次赔付,癌症二次赔付可选,保障全面。</td>
+                <td>28,600.00</td>
+                <td>200,000</td>
+                <td>默认</td>
+                <td>默认</td>
+                <td>20</td>
+                <td>15</td>
+                <td>终身</td>
+              </tr>
+              <!-- 重疾险 - 产品3 -->
+              <tr>
+                <td>健康无忧重大疾病保险</td>
+                <td>保障范围广,涵盖轻症重疾,保费适中。</td>
+                <td>18,500.00</td>
+                <td>150,000</td>
+                <td>默认</td>
+                <td>默认</td>
+                <td>20</td>
+                <td>12</td>
+                <td>终身</td>
+              </tr>
+              <!-- 重疾险 - 产品4 -->
+              <tr>
+                <td>安心人生重疾保障计划</td>
+                <td>特定疾病额外赔付,保单贷款功能。</td>
+                <td>12,800.00</td>
+                <td>100,000</td>
+                <td>默认</td>
+                <td>默认</td>
+                <td>15</td>
+                <td>8</td>
+                <td>至70岁</td>
+              </tr>
+              <!-- 医疗险 - 产品1 -->
+              <tr class="insurance-group">
+                <td class="insurance-type" rowspan="3">医疗险</td>
+                <td>平安e生保长期医疗</td>
+                <td>保证续保20年，涵盖住院医疗、特殊门诊等</td>
+                <td>--</td>
+                <td>400,000</td>
+                <td>默认</td>
+                <td>默认</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1年</td>
+              </tr>
+              <!-- 医疗险 - 产品2 -->
+              <tr>
+                <td>众安尊享e生百万医疗</td>
+                <td>最高600万保额，含质子重离子治疗</td>
+                <td>--</td>
+                <td>600,000</td>
+                <td>默认</td>
+                <td>默认</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1年</td>
+              </tr>
+              <!-- 医疗险 - 产品3 -->
+              <tr>
+                <td>太平洋蓝医保长期医疗</td>
+                <td>保证续保20年，含重疾绿通服务</td>
+                <td>--</td>
+                <td>400,000</td>
+                <td>默认</td>
+                <td>默认</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1年</td>
+              </tr>
+              <!-- 终身寿险 -->
+              <tr class="insurance-group">
+                <td class="insurance-type">终身寿险</td>
+                <td>传世金生终身寿险</td>
+                <td>终身保障,保额递增,兼具保障与传承功能。</td>
+                <td>328,500.00</td>
+                <td>100,000</td>
+                <td>默认</td>
+                <td>默认</td>
+                <td>20</td>
+                <td>12</td>
+                <td>终身</td>
+              </tr>
+              <!-- 年金险 -->
+              <tr class="insurance-group">
+                <td class="insurance-type">年金险</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+              <!-- 投连险 -->
+              <tr class="insurance-group">
+                <td class="insurance-type">投连险</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+              <!-- 万能险 -->
+              <tr class="insurance-group">
+                <td class="insurance-type">万能险</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
