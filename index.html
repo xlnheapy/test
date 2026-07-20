@@ -86,6 +86,32 @@
       .decor-icons{position:fixed;bottom:40px;right:40px;display:flex;flex-direction:column;gap:16px;opacity:.35;pointer-events:none}
       .decor-icon{width:48px;height:48px;color:#888}
       .decor-icon .cross-red{color:#8b1a1a}
+      
+      /* 封面样式 */
+      .cover-page{position:relative;width:100%;height:100vh;min-height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+      .cover-bg{position:absolute;top:0;left:0;width:100%;height:100%;
+        /* 可替换背景图片：修改url()中的图片路径 */
+        background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><linearGradient id="g1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%238b1a1a"/><stop offset="50%25" style="stop-color:%23a62626"/><stop offset="100%25" style="stop-color:%23661111"/></linearGradient></defs><rect fill="url(%23g1)" width="1920" height="1080"/><circle cx="200" cy="200" r="300" fill="%23ffffff08"/><circle cx="1700" cy="800" r="400" fill="%23ffffff06"/><circle cx="960" cy="540" r="500" fill="%23ffffff04"/></svg>');
+        background-size:cover;background-position:center;background-repeat:no-repeat;
+        /* 备用红色渐变背景 */
+        background-color:#8b1a1a}
+      .cover-bg::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,transparent 0%,rgba(0,0,0,.4) 100%)}
+      .cover-content{position:relative;z-index:1;text-align:center;padding:40px;animation:fadeInUp 1s ease-out}
+      @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+      .cover-logo{width:80px;height:80px;margin:0 auto 24px;color:#fff;opacity:.95}
+      .cover-logo svg{width:100%;height:100%;stroke:#fff}
+      .cover-title{font-size:48px;font-weight:700;color:#fff;margin:0 0 12px;letter-spacing:4px;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+      .cover-subtitle{font-size:20px;font-weight:400;color:rgba(255,255,255,.85);margin:0 0 32px;letter-spacing:2px}
+      .cover-divider{width:60px;height:2px;background:rgba(255,255,255,.7);margin:0 auto 32px}
+      .cover-info{display:inline-block;background:rgba(255,255,255,.15);border-radius:12px;padding:24px 40px;backdrop-filter:blur(10px)}
+      .cover-row{display:flex;align-items:center;gap:24px;padding:8px 0;font-size:15px;color:#fff}
+      .cover-row:not(:last-child){border-bottom:1px solid rgba(255,255,255,.1)}
+      .cover-label{opacity:.7;font-weight:400}
+      .cover-value{font-weight:600;font-family:monospace;letter-spacing:.5px}
+      .cover-scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:13px;animation:bounce 2s infinite}
+      .cover-scroll-hint svg{width:20px;height:20px}
+      @keyframes bounce{0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)}40%{transform:translateX(-50%) translateY(-10px)}60%{transform:translateX(-50%) translateY(-5px)}}
+      
       @media(max-width:768px){
         .page-wrapper{padding:24px 16px 40px}
         .summary-cards{grid-template-columns:repeat(2,1fr);gap:12px}
@@ -96,6 +122,10 @@
         .vas-table thead th{padding:8px 6px}
         .vas-table tbody td{padding:8px 6px}
         .decor-icons{display:none}
+        .cover-title{font-size:32px;letter-spacing:2px}
+        .cover-subtitle{font-size:16px}
+        .cover-info{padding:16px 24px}
+        .cover-row{gap:16px;font-size:14px}
       }
       @media(max-width:480px){
         .summary-cards{grid-template-columns:1fr 1fr;gap:10px}
@@ -139,6 +169,33 @@
     </style>
   </head>
   <body>
+    <!-- ===== 封面 ===== -->
+    <div class="cover-page">
+      <div class="cover-bg"></div>
+      <div class="cover-content">
+        <div class="cover-logo">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 44s16-8 16-20V10L24 4 8 10v14c0 12 16 20 16 20z"/>
+            <line x1="24" y1="16" x2="24" y2="32" stroke="#fff" stroke-width="2.5"/>
+            <line x1="16" y1="24" x2="32" y2="24" stroke="#fff" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <h1 class="cover-title">持仓详情报告</h1>
+        <h2 class="cover-subtitle">保险产品 / 投资产品</h2>
+        <div class="cover-divider"></div>
+        <div class="cover-info">
+          <div class="cover-row"><span class="cover-label">Prospect ID</span><span class="cover-value">A20250316001</span></div>
+          <div class="cover-row"><span class="cover-label">报告日期</span><span class="cover-value">2026年7月</span></div>
+        </div>
+      </div>
+      <div class="cover-scroll-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M19 12l-7 7-7-7"/>
+        </svg>
+        <span>向下滑动查看详情</span>
+      </div>
+    </div>
+
     <div class="page-wrapper">
       <!-- ===== Page Title ===== -->
       <div class="page-title">
