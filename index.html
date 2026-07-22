@@ -89,7 +89,7 @@
       .vas-table tbody td:first-child{color:#333;font-weight:500;border-right:1px solid #eee;line-height:1.5}
       .vas-table tbody td:last-child{border-right:none}
       .vas-table tbody tr:hover td{background-color:#f5f5f5}
-      .invest-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:auto}
+      .invest-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:auto;border:1px solid #ddd;border-radius:8px;overflow:hidden}
       .invest-table thead th{background:#e0e0e0;padding:12px 10px;font-weight:600;color:#333;text-align:center;border-right:1px solid #fff}
       .invest-table thead th:last-child{border-right:none}
       .invest-table tbody td{padding:12px 10px;border-top:1px solid #eee;text-align:center;vertical-align:top;background-color:#fff}
@@ -175,9 +175,22 @@
         .page-title{margin-bottom:28px}
       }
       
+      /* 汇总条样式 */
+      .summary-bar{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px;padding:16px 20px;background:#f8fafc;border-radius:8px;border:1px solid #e8e8e8}
+      .summary-item{display:flex;flex-direction:column;gap:4px;min-width:120px}
+      .summary-label{font-size:12px;color:#888}
+      .summary-value{font-size:16px;font-weight:600;color:#333}
+      .summary-value.highlight{color:#c9463d}
+      .summary-value.profit{color:#059669}
+      @media(max-width:768px){
+        .summary-bar{padding:12px 16px;gap:12px}
+        .summary-item{min-width:100px}
+        .summary-value{font-size:14px}
+      }
+      
       /* 保险产品明细表 */
-      .insurance-table-wrapper{overflow-x:auto;margin-bottom:40px}
-      .insurance-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:auto}
+      .insurance-table-wrapper{overflow-x:auto;margin-bottom:40px;border:1px solid #ddd;border-radius:8px}
+      .insurance-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:auto;border-radius:8px;overflow:hidden}
       .insurance-table thead th{background-color:#e0e0e0;color:#333;font-weight:600;padding:12px 10px;text-align:center;border-right:1px solid #fff;white-space:nowrap}
       .insurance-table thead th:first-child{text-align:center}
       .insurance-table thead th:last-child{border-right:none}
@@ -192,8 +205,8 @@
       }
       
       /* 安联人寿会员权益表格 */
-      .allianz-table-wrapper{margin-top:16px;overflow-x:auto}
-      .allianz-table{width:100%;border-collapse:collapse;font-size:13px}
+      .allianz-table-wrapper{margin-top:16px;overflow-x:auto;border:1px solid #ddd;border-radius:8px}
+      .allianz-table{width:100%;border-collapse:collapse;font-size:13px;border-radius:8px;overflow:hidden}
       .allianz-table thead th{background-color:#e0e0e0;color:#333;padding:12px 8px;font-weight:600;text-align:center;vertical-align:middle;border-right:1px solid #fff}
       .allianz-table thead th:first-child{text-align:left}
       .allianz-table thead th:nth-child(2){text-align:left}
@@ -293,9 +306,9 @@
                 <div class="fund-ring">
                   <svg viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
-                    <circle cx="50" cy="50" r="40" fill="none" stroke="#c9463d" stroke-width="8" stroke-dasharray="125.6 251.2" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="#c9463d" stroke-width="8" stroke-dasharray="15.07 251.2" stroke-linecap="round" transform="rotate(-90 50 50)"/>
                   </svg>
-                  <div class="ring-value">+8.63%</div>
+                  <div class="ring-value">+6%</div>
                   <div class="ring-label">年化收益</div>
                 </div>
                 <div class="fund-stats">
@@ -383,6 +396,25 @@
           </svg>
         </div>
         <div class="collapsible-content" id="insurance-table">
+          <!-- 保险汇总 -->
+          <div class="summary-bar">
+            <div class="summary-item">
+              <span class="summary-label">保单总数</span>
+              <span class="summary-value">8个</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">现金价值合计</span>
+              <span class="summary-value highlight">¥385,600.00</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">总保额</span>
+              <span class="summary-value">¥2,250,000</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">待缴期数</span>
+              <span class="summary-value">68期</span>
+            </div>
+          </div>
           <div class="insurance-table-wrapper">
           <table class="insurance-table">
             <thead>
@@ -591,6 +623,25 @@
             </svg>
           </div>
           <div class="collapsible-content" id="fund-products">
+            <!-- 基金汇总 -->
+            <div class="summary-bar">
+              <div class="summary-item">
+                <span class="summary-label">基金产品</span>
+                <span class="summary-value">4个</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">总市值</span>
+                <span class="summary-value highlight">¥406,012.89</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">总成本</span>
+                <span class="summary-value">¥368,200.00</span>
+              </div>
+              <div class="summary-item">
+                <span class="summary-label">累计收益</span>
+                <span class="summary-value profit">+¥37,812.89</span>
+              </div>
+            </div>
             <div style="overflow-x:auto">
             <table class="invest-table">
               <thead>
