@@ -135,6 +135,23 @@
         /* 备用红色渐变背景 */
         background-color:#8b1a1a}
       .cover-bg::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,transparent 0%,rgba(0,0,0,.4) 100%)}
+      
+      /* 客户详情样式 */
+      .customer-section{background:#fff;border-radius:12px;padding:32px;margin-bottom:32px;border:1px solid #eee}
+      .customer-card{display:flex;align-items:center;gap:20px;padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid #eee}
+      .customer-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#8b1a1a,#a62626);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+      .customer-avatar svg{width:36px;height:36px}
+      .customer-info{flex:1}
+      .customer-name{font-size:24px;font-weight:600;color:#1a1a1a;margin-bottom:6px}
+      .customer-level{font-size:14px;color:#8b1a1a;font-weight:500;padding:4px 12px;background:rgba(139,26,26,0.08);border-radius:20px;display:inline-block}
+      .customer-details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+      .detail-item{display:flex;flex-direction:column;gap:6px}
+      .detail-label{font-size:12px;color:#888;font-weight:400}
+      .detail-value{font-size:15px;color:#333;font-weight:500}
+      @media(max-width:768px){
+        .customer-details-grid{grid-template-columns:repeat(2,1fr)}
+        .customer-card{flex-direction:column;text-align:center}
+      }
       .cover-content{position:relative;z-index:1;text-align:center;padding:40px;animation:fadeInUp 1s ease-out}
       @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
       .cover-logo{width:80px;height:80px;margin:0 auto 24px;color:#fff;opacity:.95}
@@ -255,6 +272,57 @@
     </div>
 
     <div class="page-wrapper">
+      <!-- ===== 客户详情 ===== -->
+      <section class="section customer-section">
+        <div class="section-header">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="section-number">客户详情</span>
+        </div>
+        
+        <div class="customer-card">
+          <div class="customer-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="customer-info">
+            <div class="customer-name">张三</div>
+            <div class="customer-level">臻玉客户</div>
+          </div>
+        </div>
+        
+        <div class="customer-details-grid">
+          <div class="detail-item">
+            <span class="detail-label">客户ID</span>
+            <span class="detail-value">A20250316001</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">联系电话</span>
+            <span class="detail-value">138****8888</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">电子邮箱</span>
+            <span class="detail-value">zhang***@email.com</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">联系地址</span>
+            <span class="detail-value">上海市浦东新区***路***号</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">理财顾问</span>
+            <span class="detail-value">李经理</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">服务热线</span>
+            <span class="detail-value">400-888-8888</span>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== Page Title ===== -->
       <div class="page-title">
         <div class="title-bar"></div>
