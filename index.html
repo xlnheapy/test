@@ -262,57 +262,11 @@
   </head>
   <body>
     <!-- 内容区水印 -->
-    <div class="content-watermark">
-      <div class="watermark-row">
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-      </div>
-      <div class="watermark-row">
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-      </div>
-      <div class="watermark-row">
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-      </div>
-      <div class="watermark-row">
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-      </div>
-      <div class="watermark-row">
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-      </div>
-      <div class="watermark-row">
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-      </div>
-      <div class="watermark-row">
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-      </div>
-      <div class="watermark-row">
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        <span class="watermark-item">工号:EMP001 2026-07-10</span>
-      </div>
-    </div>
+    <div class="content-watermark" id="content-watermark"></div>
     <!-- ===== 封面 ===== -->
     <div class="cover-page">
       <div class="cover-bg"></div>
-      <div class="cover-watermark">
-        <div class="watermark-row">
-          <span class="watermark-item">工号:EMP001 2026-07-10</span>
-          <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        </div>
-        <div class="watermark-row">
-          <span class="watermark-item">工号:EMP001 2026-07-10</span>
-          <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        </div>
-        <div class="watermark-row">
-          <span class="watermark-item">工号:EMP001 2026-07-10</span>
-          <span class="watermark-item">工号:EMP001 2026-07-10</span>
-        </div>
-      </div>
+      <div class="cover-watermark" id="cover-watermark"></div>
       <div class="cover-content">
         <div class="cover-logo">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1549,6 +1503,31 @@
       </div>
     </div>
     <script>
+      // ===== 水印配置（修改这里即可更新所有水印）=====
+      const WATERMARK_TEXT = '工号:EMP001 2026-07-10';
+      const COVER_WATERMARK_ROWS = 3;      // 封面水印行数
+      const COVER_WATERMARK_COLS = 2;      // 封面水印每行列数
+      const CONTENT_WATERMARK_ROWS = 8;    // 内容区水印行数
+      const CONTENT_WATERMARK_COLS = 2;    // 内容区水印每行列数
+      
+      // 生成水印HTML
+      function generateWatermark(rows, cols, text) {
+        let html = '';
+        for (let i = 0; i < rows; i++) {
+          html += '<div class="watermark-row">';
+          for (let j = 0; j < cols; j++) {
+            html += `<span class="watermark-item">${text}</span>`;
+          }
+          html += '</div>';
+        }
+        return html;
+      }
+      
+      // 应用水印
+      document.getElementById('cover-watermark').innerHTML = generateWatermark(COVER_WATERMARK_ROWS, COVER_WATERMARK_COLS, WATERMARK_TEXT);
+      document.getElementById('content-watermark').innerHTML = generateWatermark(CONTENT_WATERMARK_ROWS, CONTENT_WATERMARK_COLS, WATERMARK_TEXT);
+      
+      // ===== 折叠功能 =====
       document.addEventListener('DOMContentLoaded', function() {
         const headers = document.querySelectorAll('.collapsible-header');
         headers.forEach(function(header) {
