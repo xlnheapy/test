@@ -167,6 +167,10 @@
       .cover-scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:13px;animation:bounce 2s infinite}
       .cover-scroll-hint svg{width:20px;height:20px}
       @keyframes bounce{0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)}40%{transform:translateX(-50%) translateY(-10px)}60%{transform:translateX(-50%) translateY(-5px)}}
+      .cover-internal{position:absolute;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:8px 24px;font-size:12px;color:rgba(255,255,255,.95);letter-spacing:2px;font-weight:500}
+      .cover-watermark{position:absolute;top:0;left:0;right:0;bottom:0;z-index:2;pointer-events:none;overflow:hidden}
+      .watermark-row{display:flex;justify-content:space-around;transform:rotate(-25deg);margin:60px -100px}
+      .watermark-item{font-size:14px;color:#fff;opacity:.08;font-weight:500;letter-spacing:1px;white-space:nowrap;margin:0 40px}
       
       @media(max-width:768px){
         .page-wrapper{padding:24px 16px 40px}
@@ -255,6 +259,44 @@
     <!-- ===== 封面 ===== -->
     <div class="cover-page">
       <div class="cover-bg"></div>
+      <div class="cover-watermark">
+        <div class="watermark-row">
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+        </div>
+        <div class="watermark-row">
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+        </div>
+        <div class="watermark-row">
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+        </div>
+        <div class="watermark-row">
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+        </div>
+        <div class="watermark-row">
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+        </div>
+        <div class="watermark-row">
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+          <span class="watermark-item">工号:EMP001 2026-07-10</span>
+        </div>
+      </div>
       <div class="cover-content">
         <div class="cover-logo">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -271,6 +313,7 @@
           <div class="cover-row"><span class="cover-label">报告日期</span><span class="cover-value">2026年7月</span></div>
         </div>
       </div>
+      <div class="cover-internal">仅供内部使用</div>
       <div class="cover-scroll-hint">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 5v14M19 12l-7 7-7-7"/>
