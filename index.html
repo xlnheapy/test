@@ -248,6 +248,15 @@
       .allianz-table .check-mark{color:#333;font-weight:600}
       .allianz-table .no-mark{color:#bbb}
       .allianz-table .note-text{font-size:11px;color:#888}
+      /* 高亮当前客户等级列 */
+      .allianz-table .highlight-col{background-color:rgba(139,26,26,0.08)!important}
+      .allianz-table thead .highlight-col{background-color:rgba(139,26,26,0.15)!important;color:#8b1a1a}
+      .allianz-table tbody tr:hover .highlight-col{background-color:rgba(139,26,26,0.12)!important}
+      /* 使用nth-child选择器高亮第3列（臻玉客户） */
+      .allianz-table th:nth-child(3),
+      .allianz-table td:nth-child(3){background-color:rgba(139,26,26,0.08)}
+      .allianz-table thead th:nth-child(3){background-color:rgba(139,26,26,0.15);color:#8b1a1a}
+      .allianz-table tbody tr:hover td:nth-child(3){background-color:rgba(139,26,26,0.12)}
       .allianz-notes{margin-top:16px;padding:16px;background:#f8fafc;border-radius:8px;font-size:12px;color:#475569;line-height:1.8}
       .allianz-notes p{margin:4px 0}
       
