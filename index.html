@@ -64,6 +64,18 @@
       .stat-value.profit{color:#16a34a}
       .stat-value.loss{color:#c9463d}
       
+      /* 饼状图样式 */
+      .fund-pie{display:flex;flex-direction:column;align-items:center;gap:12px}
+      .fund-pie svg{width:120px;height:120px}
+      .pie-legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+      .legend-item{display:flex;align-items:center;gap:4px;font-size:11px;color:#666}
+      .legend-color{width:10px;height:10px;border-radius:2px}
+      .fund-pie-inputs{display:flex;flex-direction:column;gap:8px}
+      .pie-input-row{display:flex;align-items:center;gap:8px}
+      .pie-input-row label{width:50px;font-size:12px;color:#666}
+      .pie-input-row input{width:60px;padding:4px 8px;border:1px solid #ddd;border-radius:4px;font-size:12px;text-align:center}
+      .pie-input-row span{font-size:12px;color:#666}
+      
       .insurance-list{display:flex;flex-direction:column;gap:16px}
       .insurance-item{display:flex;align-items:center;gap:14px}
       .insurance-icon{width:24px;height:24px;flex-shrink:0}
@@ -402,26 +414,30 @@
             </div>
             <div class="module-body">
               <div class="fund-highlight">
-                <div class="fund-ring">
-                  <svg viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
-                    <circle cx="50" cy="50" r="40" fill="none" stroke="#c9463d" stroke-width="8" stroke-dasharray="15.07 251.2" stroke-linecap="round" transform="rotate(-90 50 50)"/>
-                  </svg>
-                  <div class="ring-value">+6%</div>
-                  <div class="ring-label">年化收益</div>
+                <div class="fund-pie">
+                  <svg id="pieChart" viewBox="0 0 100 100"></svg>
+                  <div class="pie-legend" id="pieLegend"></div>
                 </div>
-                <div class="fund-stats">
-                  <div class="fund-stat">
-                    <span class="stat-label">累计盈亏</span>
-                    <span class="stat-value profit">+¥37,803.23</span>
+                <div class="fund-pie-inputs">
+                  <div class="pie-input-row">
+                    <label>股票型</label>
+                    <input type="number" id="stock" value="40" min="0" max="100" onchange="updatePieChart()">
+                    <span>%</span>
                   </div>
-                  <div class="fund-stat">
-                    <span class="stat-label">最大回撤</span>
-                    <span class="stat-value loss">-2.30%</span>
+                  <div class="pie-input-row">
+                    <label>混合型</label>
+                    <input type="number" id="mixed" value="30" min="0" max="100" onchange="updatePieChart()">
+                    <span>%</span>
                   </div>
-                  <div class="fund-stat">
-                    <span class="stat-label">基金占比</span>
-                    <span class="stat-value">28.8%</span>
+                  <div class="pie-input-row">
+                    <label>债券型</label>
+                    <input type="number" id="bond" value="20" min="0" max="100" onchange="updatePieChart()">
+                    <span>%</span>
+                  </div>
+                  <div class="pie-input-row">
+                    <label>货币型</label>
+                    <input type="number" id="money" value="10" min="0" max="100" onchange="updatePieChart()">
+                    <span>%</span>
                   </div>
                 </div>
               </div>
@@ -1537,7 +1553,72 @@
             content.classList.add('collapsed');
           }
         });
+        
+        // 初始化饼图
+        updatePieChart();
       });
+      
+      // ===== 饼状图功能 =====
+      const pieColors = ['#c9463d', '#f59e0b', '#10b981', '#3b82f6'];
+      const pieLabels = ['股票型', '混合型', '债券型', '货币型'];
+      
+      function updatePieChart() {
+        const stock = parseFloat(document.getElementById('stock').value) || 0;
+        const mixed = parseFloat(document.getElementById('mixed').value) || 0;
+        const bond = parseFloat(document.getElementById('bond').value) || 0;
+        const money = parseFloat(document.getElementById('money').value) || 0;
+        
+        const total = stock + mixed + bond + money;
+        const values = [stock, mixed, bond, money];
+        
+        // 计算百分比
+        const percentages = values.map(v => total > 0 ? (v / total) * 100 : 0);
+        
+        // 绘制饼图
+        const svg = document.getElementById('pieChart');
+        svg.innerHTML = '';
+        
+        let currentAngle = -90; // 从顶部开始
+        const cx = 50, cy = 50, r = 40;
+        
+        percentages.forEach((percent, i) => {
+          if (percent === 0) return;
+          
+          const angle = (percent / 100) * 360;
+          const startAngle = currentAngle;
+          const endAngle = currentAngle + angle;
+          
+          // 计算弧线路径
+          const startRad = (startAngle * Math.PI) / 180;
+          const endRad = (endAngle * Math.PI) / 180;
+          
+          const x1 = cx + r * Math.cos(startRad);
+          const y1 = cy + r * Math.sin(startRad);
+          const x2 = cx + r * Math.cos(endRad);
+          const y2 = cy + r * Math.sin(endRad);
+          
+          const largeArcFlag = angle > 180 ? 1 : 0;
+          
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          const d = `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+          path.setAttribute('d', d);
+          path.setAttribute('fill', pieColors[i]);
+          path.setAttribute('stroke', '#fff');
+          path.setAttribute('stroke-width', '1');
+          svg.appendChild(path);
+          
+          currentAngle = endAngle;
+        });
+        
+        // 更新图例
+        const legend = document.getElementById('pieLegend');
+        legend.innerHTML = percentages.map((p, i) => 
+          `<div class="legend-item">
+            <span class="legend-color" style="background:${pieColors[i]}"></span>
+            ${pieLabels[i]} ${p.toFixed(1)}%
+          </div>`
+        ).join('');
+      }
     </script>
   </body>
 </html>
