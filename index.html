@@ -56,6 +56,14 @@
       .fund-ring svg{width:100%;height:100%}
       .ring-value{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:16px;font-weight:700;color:#c9463d}
       .ring-label{position:absolute;top:50%;left:50%;transform:translate(-50%,20%);font-size:11px;color:#888}
+      
+      /* 基金类型饼状图 */
+      .fund-pie-container{display:flex;align-items:center;gap:20px;flex-shrink:0}
+      .fund-pie{width:120px;height:120px;flex-shrink:0}
+      .pie-legend{display:flex;flex-direction:column;gap:8px}
+      .legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#555}
+      .legend-color{width:12px;height:12px;border-radius:2px;flex-shrink:0}
+      
       .fund-stats{flex:1}
       .fund-stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0}
       .fund-stat:last-child{border-bottom:none}
@@ -402,13 +410,19 @@
             </div>
             <div class="module-body">
               <div class="fund-highlight">
-                <div class="fund-ring">
-                  <svg viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="none" stroke="#eee" stroke-width="8"/>
-                    <circle cx="50" cy="50" r="40" fill="none" stroke="#c9463d" stroke-width="8" stroke-dasharray="15.07 251.2" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                <div class="fund-pie-container">
+                  <svg class="fund-pie" viewBox="0 0 100 100">
+                    <circle class="pie-segment" cx="50" cy="50" r="40" fill="none" stroke="#c9463d" stroke-width="20" stroke-dasharray="100.53 150.80" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                    <circle class="pie-segment" cx="50" cy="50" r="40" fill="none" stroke="#f59e0b" stroke-width="20" stroke-dasharray="75.40 175.93" stroke-dashoffset="-100.53" transform="rotate(-90 50 50)"/>
+                    <circle class="pie-segment" cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="20" stroke-dasharray="50.27 201.06" stroke-dashoffset="-175.93" transform="rotate(-90 50 50)"/>
+                    <circle class="pie-segment" cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="20" stroke-dasharray="25.13 226.19" stroke-dashoffset="-226.19" transform="rotate(-90 50 50)"/>
                   </svg>
-                  <div class="ring-value">+6%</div>
-                  <div class="ring-label">年化收益</div>
+                  <div class="pie-legend">
+                    <div class="legend-item"><span class="legend-color" style="background:#c9463d"></span>股票型 40%</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#f59e0b"></span>混合型 30%</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#10b981"></span>债券型 20%</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#3b82f6"></span>货币型 10%</div>
+                  </div>
                 </div>
                 <div class="fund-stats">
                   <div class="fund-stat">
