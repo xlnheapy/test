@@ -1556,8 +1556,7 @@
         // 使用 ECharts 生成饼状图
         function renderPieChart() {
           const chartDom = document.getElementById('fundPieChart');
-          const legend = document.getElementById('pieLegend');
-          if (!chartDom || !legend) return;
+          if (!chartDom) return;
 
           const myChart = echarts.init(chartDom);
 
@@ -1568,11 +1567,22 @@
               trigger: 'item',
               formatter: '{b}: {d}%'
             },
+            legend: {
+              orient: 'horizontal',
+              bottom: 0,
+              left: 'center',
+              itemWidth: 10,
+              itemHeight: 10,
+              textStyle: {
+                fontSize: 12,
+                color: '#666'
+              }
+            },
             series: [
               {
                 type: 'pie',
-                radius: ['50%', '75%'],
-                center: ['50%', '50%'],
+                radius: ['40%', '65%'],
+                center: ['50%', '40%'],
                 avoidLabelOverlap: false,
                 label: {
                   show: false
@@ -1595,16 +1605,6 @@
           };
 
           myChart.setOption(option);
-
-          // 生成图例
-          legend.innerHTML = '';
-          pieData.forEach(item => {
-            const percentage = ((item.value / total) * 100).toFixed(0);
-            const legendItem = document.createElement('div');
-            legendItem.className = 'legend-item';
-            legendItem.innerHTML = `<span class="legend-color" style="background:${item.color}"></span>${item.name} ${percentage}%`;
-            legend.appendChild(legendItem);
-          });
 
           // 响应式调整
           window.addEventListener('resize', () => {
