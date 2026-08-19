@@ -411,18 +411,8 @@
             <div class="module-body">
               <div class="fund-highlight">
                 <div class="fund-pie-container">
-                  <svg class="fund-pie" viewBox="0 0 100 100">
-                    <circle class="pie-segment" cx="50" cy="50" r="40" fill="none" stroke="#c9463d" stroke-width="20" stroke-dasharray="100.53 150.80" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
-                    <circle class="pie-segment" cx="50" cy="50" r="40" fill="none" stroke="#f59e0b" stroke-width="20" stroke-dasharray="75.40 175.93" stroke-dashoffset="-100.53" transform="rotate(-90 50 50)"/>
-                    <circle class="pie-segment" cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="20" stroke-dasharray="50.27 201.06" stroke-dashoffset="-175.93" transform="rotate(-90 50 50)"/>
-                    <circle class="pie-segment" cx="50" cy="50" r="40" fill="none" stroke="#3b82f6" stroke-width="20" stroke-dasharray="25.13 226.19" stroke-dashoffset="-226.19" transform="rotate(-90 50 50)"/>
-                  </svg>
-                  <div class="pie-legend">
-                    <div class="legend-item"><span class="legend-color" style="background:#c9463d"></span>股票型 40%</div>
-                    <div class="legend-item"><span class="legend-color" style="background:#f59e0b"></span>混合型 30%</div>
-                    <div class="legend-item"><span class="legend-color" style="background:#10b981"></span>债券型 20%</div>
-                    <div class="legend-item"><span class="legend-color" style="background:#3b82f6"></span>货币型 10%</div>
-                  </div>
+                  <svg id="fundPieChart" class="fund-pie" viewBox="0 0 100 100"></svg>
+                  <div id="pieLegend" class="pie-legend"></div>
                 </div>
                 <div class="fund-stats">
                   <div class="fund-stat">
@@ -1551,6 +1541,63 @@
             content.classList.add('collapsed');
           }
         });
+
+        // ===== 基金类型占比饼状图配置 =====
+        // 修改这里的数组即可更新饼状图
+        const pieData = [
+          { name: '股票型', value: 40, color: '#c9463d' },
+          { name: '混合型', value: 30, color: '#f59e0b' },
+          { name: '债券型', value: 20, color: '#10b981' },
+          { name: '货币型', value: 10, color: '#3b82f6' }
+        ];
+
+        // 生成饼状图
+        function renderPieChart() {
+          const svg = document.getElementById('fundPieChart');
+          const legend = document.getElementById('pieLegend');
+          if (!svg || !legend) return;
+
+          const total = pieData.reduce((sum, item) => sum + item.value, 0);
+          const radius = 40;
+          const circumference = 2 * Math.PI * radius;
+          let cumulativeOffset = 0;
+
+          // 清空现有内容
+          svg.innerHTML = '';
+          legend.innerHTML = '';
+
+          // 生成SVG圆形分段
+          pieData.forEach((item, index) => {
+            const percentage = item.value / total;
+            const segmentLength = percentage * circumference;
+            const remainingLength = circumference - segmentLength;
+
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', '50');
+            circle.setAttribute('cy', '50');
+            circle.setAttribute('r', radius.toString());
+            circle.setAttribute('fill', 'none');
+            circle.setAttribute('stroke', item.color);
+            circle.setAttribute('stroke-width', '20');
+            circle.setAttribute('stroke-dasharray', `${segmentLength.toFixed(2)} ${remainingLength.toFixed(2)}`);
+            circle.setAttribute('stroke-dashoffset', (-cumulativeOffset).toFixed(2));
+            circle.setAttribute('transform', 'rotate(-90 50 50)');
+            svg.appendChild(circle);
+
+            cumulativeOffset += segmentLength;
+          });
+
+          // 生成图例
+          pieData.forEach(item => {
+            const percentage = ((item.value / total) * 100).toFixed(0);
+            const legendItem = document.createElement('div');
+            legendItem.className = 'legend-item';
+            legendItem.innerHTML = `<span class="legend-color" style="background:${item.color}"></span>${item.name} ${percentage}%`;
+            legend.appendChild(legendItem);
+          });
+        }
+
+        renderPieChart();
       });
     </script>
   </body>
