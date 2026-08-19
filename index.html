@@ -46,11 +46,12 @@
       
       .detail-section{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
       .detail-module{background:#fff;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden}
-      .module-header{display:flex;align-items:center;gap:10px;padding:14px 20px}
-      .module-header.fund-header{background:#c9463d}
-      .module-header.insurance-header{background:#1a1a1a}
-      .module-icon{width:20px;height:20px;color:#fff;flex-shrink:0}
-      .module-title{font-size:15px;font-weight:600;color:#fff}
+      .module-header{display:flex;align-items:center;gap:10px;padding:14px 20px;background:transparent;border-bottom:2px solid transparent;position:relative}
+      .module-header::after{content:'';position:absolute;bottom:0;left:20px;width:60px;height:3px;background:linear-gradient(90deg,#c9463d 0%,#c9463d 60%,transparent 100%);border-radius:2px}
+      .module-header.fund-header{background:transparent}
+      .module-header.insurance-header{background:transparent}
+      .module-icon{width:20px;height:20px;color:#c9463d;flex-shrink:0}
+      .module-title{font-size:15px;font-weight:600;color:#c9463d}
       .module-body{padding:20px}
       
       .fund-highlight{display:flex;align-items:center;gap:24px}
