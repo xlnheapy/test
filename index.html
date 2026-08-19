@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="保险产品持仓详情" />
     <title>您的持仓详情 - 保险产品</title>
+    <!-- ECharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <style>
       *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
       body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background-color:#f5f5f5;color:#333;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
@@ -411,7 +413,7 @@
             <div class="module-body">
               <div class="fund-highlight">
                 <div class="fund-pie-container">
-                  <svg id="fundPieChart" class="fund-pie" viewBox="0 0 100 100"></svg>
+                  <div id="fundPieChart" style="width: 180px; height: 180px;"></div>
                   <div id="pieLegend" class="pie-legend"></div>
                 </div>
                 <div class="fund-stats">
@@ -1551,49 +1553,62 @@
           { name: '货币型', value: 10, color: '#3b82f6' }
         ];
 
-        // 生成饼状图
+        // 使用 ECharts 生成饼状图
         function renderPieChart() {
-          const svg = document.getElementById('fundPieChart');
+          const chartDom = document.getElementById('fundPieChart');
           const legend = document.getElementById('pieLegend');
-          if (!svg || !legend) return;
+          if (!chartDom || !legend) return;
+
+          const myChart = echarts.init(chartDom);
 
           const total = pieData.reduce((sum, item) => sum + item.value, 0);
-          const radius = 40;
-          const circumference = 2 * Math.PI * radius;
-          let cumulativeOffset = 0;
 
-          // 清空现有内容
-          svg.innerHTML = '';
-          legend.innerHTML = '';
+          const option = {
+            tooltip: {
+              trigger: 'item',
+              formatter: '{b}: {d}%'
+            },
+            series: [
+              {
+                type: 'pie',
+                radius: ['50%', '75%'],
+                center: ['50%', '50%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: false
+                },
+                emphasis: {
+                  label: {
+                    show: false
+                  }
+                },
+                labelLine: {
+                  show: false
+                },
+                data: pieData.map(item => ({
+                  value: item.value,
+                  name: item.name,
+                  itemStyle: { color: item.color }
+                }))
+              }
+            ]
+          };
 
-          // 生成SVG圆形分段
-          pieData.forEach((item, index) => {
-            const percentage = item.value / total;
-            const segmentLength = percentage * circumference;
-            const remainingLength = circumference - segmentLength;
-
-            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            circle.setAttribute('cx', '50');
-            circle.setAttribute('cy', '50');
-            circle.setAttribute('r', radius.toString());
-            circle.setAttribute('fill', 'none');
-            circle.setAttribute('stroke', item.color);
-            circle.setAttribute('stroke-width', '20');
-            circle.setAttribute('stroke-dasharray', `${segmentLength.toFixed(2)} ${remainingLength.toFixed(2)}`);
-            circle.setAttribute('stroke-dashoffset', (-cumulativeOffset).toFixed(2));
-            circle.setAttribute('transform', 'rotate(-90 50 50)');
-            svg.appendChild(circle);
-
-            cumulativeOffset += segmentLength;
-          });
+          myChart.setOption(option);
 
           // 生成图例
+          legend.innerHTML = '';
           pieData.forEach(item => {
             const percentage = ((item.value / total) * 100).toFixed(0);
             const legendItem = document.createElement('div');
             legendItem.className = 'legend-item';
             legendItem.innerHTML = `<span class="legend-color" style="background:${item.color}"></span>${item.name} ${percentage}%`;
             legend.appendChild(legendItem);
+          });
+
+          // 响应式调整
+          window.addEventListener('resize', () => {
+            myChart.resize();
           });
         }
 
