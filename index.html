@@ -217,6 +217,14 @@
       .summary-item{background:#f8f9fa;padding:10px 16px;border-radius:6px;display:flex;flex-direction:column;gap:4px;min-width:100px}
       .summary-label{font-size:12px;color:#888;font-weight:400}
       .summary-value{font-size:16px;font-weight:600;color:#1a1a1a}
+
+      /* 重要声明样式 - 双边框 */
+      .disclaimer-section{margin:40px 20px;padding:0}
+      .disclaimer-outer{border:3px solid #c9463d;border-radius:12px;padding:6px}
+      .disclaimer-inner{border:1px solid #c9463d;border-radius:8px;padding:24px 32px;background:#fff}
+      .disclaimer-title{font-size:18px;font-weight:700;color:#c9463d;margin:0 0 16px 0;text-align:center}
+      .disclaimer-content{font-size:14px;line-height:1.8;color:#555}
+      .disclaimer-content p{margin:8px 0}
       .summary-value.highlight{color:#c9463d}
       .summary-value.profit{color:#059669}
       @media(max-width:768px){
@@ -1616,5 +1624,21 @@
         renderPieChart();
       });
     </script>
+
+    <!-- 重要声明 -->
+    <div class="disclaimer-section">
+      <div class="disclaimer-outer">
+        <div class="disclaimer-inner">
+          <h3 class="disclaimer-title">重要声明</h3>
+          <div class="disclaimer-content">
+            <p>1. 本报告仅供参考，不构成任何投资建议或承诺。投资有风险，入市需谨慎。</p>
+            <p>2. 本报告中的数据来源于公开市场信息，我们力求准确可靠，但不对其完整性和准确性做出保证。</p>
+            <p>3. 过往业绩不代表未来表现，投资者应根据自身风险承受能力和投资目标做出独立判断。</p>
+            <p>4. 本报告版权归发行方所有，未经书面许可，任何机构和个人不得以任何形式复制、转载或传播。</p>
+            <p>5. 如有疑问，请联系您的理财顾问或拨打客服热线。</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
