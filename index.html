@@ -46,6 +46,16 @@
       
       .detail-section{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
       .detail-module{background:#fff;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden}
+      /* 资产分布 */
+      .asset-distribution{grid-column:1/-1;background:#fff;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden;margin-bottom:0}
+      .asset-dist-body{padding:20px}
+      .asset-bar-row{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+      .asset-bar-row:last-child{margin-bottom:0}
+      .asset-bar-label{width:100px;font-size:14px;font-weight:600;color:#333;flex-shrink:0}
+      .asset-bar-track{flex:1;height:24px;background:#f0f0f0;border-radius:12px;overflow:hidden;position:relative}
+      .asset-bar-fill{height:100%;border-radius:12px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-size:12px;font-weight:700;color:#fff;transition:width .6s ease}
+      .asset-bar-fill.fund{background:linear-gradient(90deg,#c9463d,#e5736d)}
+      .asset-bar-fill.insurance{background:linear-gradient(90deg,#1e293b,#475569)}
       .module-header{display:flex;align-items:center;gap:10px;padding:14px 20px;background:transparent;border-bottom:1px solid #e0e0e0;position:relative}
       .module-header::after{content:'';position:absolute;bottom:-1px;left:0;width:100%;height:3px;background:linear-gradient(90deg,#c9463d 0%,#c9463d 30%,transparent 100%)}
       .module-header.fund-header{background:transparent}
@@ -418,6 +428,31 @@
             <div class="overview-label">累计已缴保费</div>
             <div class="overview-value highlight">¥1,850,000</div>
             <div class="overview-note">历史累计缴费金额</div>
+          </div>
+        </div>
+
+        <!-- 资产分布 -->
+        <div class="asset-distribution">
+          <div class="module-header">
+            <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 7l-8.5 8.5-5-5L2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+            <span class="module-title">资产分布</span>
+          </div>
+          <div class="asset-dist-body">
+            <div class="asset-bar-row">
+              <span class="asset-bar-label">基金市值</span>
+              <div class="asset-bar-track">
+                <div class="asset-bar-fill fund" style="width:15.7%">15.7%</div>
+              </div>
+            </div>
+            <div class="asset-bar-row">
+              <span class="asset-bar-label">保险现金价值</span>
+              <div class="asset-bar-track">
+                <div class="asset-bar-fill insurance" style="width:14.9%">14.9%</div>
+              </div>
+            </div>
           </div>
         </div>
 
