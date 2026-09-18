@@ -440,19 +440,8 @@
             </svg>
             <span class="module-title">资产分布</span>
           </div>
-          <div class="asset-dist-body">
-            <div class="asset-bar-row">
-              <span class="asset-bar-label">基金市值</span>
-              <div class="asset-bar-track">
-                <div class="asset-bar-fill fund" style="width:15.7%">15.7%</div>
-              </div>
-            </div>
-            <div class="asset-bar-row">
-              <span class="asset-bar-label">保险现金价值</span>
-              <div class="asset-bar-track">
-                <div class="asset-bar-fill insurance" style="width:14.9%">14.9%</div>
-              </div>
-            </div>
+          <div class="asset-dist-body" style="display:flex;justify-content:center;">
+            <div id="assetPieChart" style="width: 300px; height: 220px;"></div>
           </div>
         </div>
 
@@ -1669,6 +1658,74 @@
         }
 
         renderPieChart();
+
+        // ===== 资产分布饼状图 =====
+        // 修改这里的数组即可更新资产分布
+        const assetData = [
+          { name: '基金市值', value: 15.7, color: '#c9463d' },
+          { name: '保险现金价值', value: 14.9, color: '#8b1a1a' },
+          { name: '其他资产', value: 69.4, color: '#d1d5db' }
+        ];
+
+        function renderAssetPieChart() {
+          const chartDom = document.getElementById('assetPieChart');
+          if (!chartDom) return;
+
+          const myChart = echarts.init(chartDom);
+
+          const option = {
+            tooltip: {
+              trigger: 'item',
+              formatter: '{b}: {c}%'
+            },
+            legend: {
+              orient: 'horizontal',
+              bottom: 0,
+              left: 'center',
+              itemWidth: 10,
+              itemHeight: 10,
+              textStyle: {
+                fontSize: 12,
+                color: '#666'
+              }
+            },
+            series: [
+              {
+                type: 'pie',
+                radius: ['40%', '65%'],
+                center: ['50%', '42%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: true,
+                  formatter: '{b}\n{d}%',
+                  fontSize: 11,
+                  color: '#333'
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontWeight: 'bold'
+                  }
+                },
+                labelLine: {
+                  show: true,
+                  length: 10,
+                  length2: 8
+                },
+                data: assetData.map(item => ({
+                  value: item.value,
+                  name: item.name,
+                  itemStyle: { color: item.color }
+                }))
+              }
+            ]
+          };
+
+          myChart.setOption(option);
+          window.addEventListener('resize', function() { myChart.resize(); });
+        }
+
+        renderAssetPieChart();
       });
     </script>
 
